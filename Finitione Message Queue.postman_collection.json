@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "0cb1a9de-4b7a-4bae-bde4-27e26e9e8f70",
+		"name": "Finitione Message Queue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13932636"
+	},
+	"item": [
+		{
+			"name": "Instant Message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"This is instant message\",\r\n    \"priority\": 1,\r\n    \"type\": \"order\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/queue/instant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"queue",
+						"instant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delayed Message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Test message with delay\",\r\n    \"priority\": 2,\r\n    \"type\": \"email\",\r\n    \"delay\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/queue/delayed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"queue",
+						"delayed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delayed Message Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/queue/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"queue",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
